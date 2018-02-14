@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace biblioteca
@@ -10,6 +11,12 @@ namespace biblioteca
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            config.Formatters.JsonFormatter.MediaTypeMappings
+                .Add(new System.Net.Http.Formatting.RequestHeaderMapping("Accept",
+                    "text/html",
+                    StringComparison.InvariantCultureIgnoreCase,
+                    true,
+                    "application/json"));
 
             // Web API routes
             config.MapHttpAttributeRoutes();
