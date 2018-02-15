@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using MongoDB.Driver;
+using biblioteca.Lib.Exceptions;
 
 namespace biblioteca.Repositorio
 {
@@ -23,6 +25,18 @@ namespace biblioteca.Repositorio
         }
 
         private LivroRepositorio() : base() { }
+
+        public new IEnumerable<Livro> List()
+        {
+            try
+            {
+                return base.GetCollection().AsQueryable().OrderBy(o => o.Titulo).ToList();
+            }
+            catch (Exception e)
+            {
+                throw new MongoDbException(e);
+            }
+        }
 
     }
 }
