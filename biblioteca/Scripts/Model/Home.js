@@ -15,7 +15,7 @@ $(document).ready(function () {
         },
         formatters: {
             "commands": function (column, row) {
-                return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.Id + "\" >Atualizar</button> " +
+                return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.Id + "\" >Editar</button> " +
                     "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.Id + "\" data-row-title=\""+row.Titulo+"\" >Excluir</button>";
             }
         }
@@ -164,7 +164,7 @@ function validate() {
     else {
         $('#Autor').css('border-color', 'lightgrey');
     }
-    if ($('#Ano').val().trim() == "") {
+    if ($('#Ano').val().trim() == "" || isNaN($('#Ano').val().trim())) {
         $('#Ano').css('border-color', 'Red');
         isValid = false;
     }
