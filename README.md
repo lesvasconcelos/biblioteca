@@ -22,7 +22,7 @@ Estou utilizando o mLab como servidor. Caso se queira utilizar localmente, alter
   </appSettings>
 ```
   
-## Ambiente online https://appharbor.com/
+## Ambiente online [AppHarbor](https://appharbor.com/)
 
 Para visualizar a solução, ela está disponível na plataforma do AppHarbor no endereço http://biblioteca-4.apphb.com/.
 
