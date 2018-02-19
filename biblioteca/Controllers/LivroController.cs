@@ -115,5 +115,10 @@ namespace biblioteca.Controllers
                 return InternalServerError(e as Exception);
             }
         }
+        
+        public IHttpActionResult Options()
+        {
+            return Ok();
+        }
     }
 }
