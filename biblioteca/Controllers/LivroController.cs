@@ -11,6 +11,7 @@ using System.Web.Http.Results;
 
 namespace biblioteca.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class LivroController : ApiController
     {
         private LivroRepositorio LivroRepositorio => LivroRepositorio.Instance;
